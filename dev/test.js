@@ -1,5 +1,19 @@
 const blockChain = require('./blockchain');
 
 const bitcoin = new  blockChain();
+
 bitcoin.createNewBlock(44425, 'DSDDS877887SDSD87', '90SADASDIIIWEJKA4545A54SD');
+bitcoin.createNewBlock(568955, 'FSDF66S5565565DF', 'SADASDPOPOQPOWEKHKJASDASDJIKJKJASJD');
+
+bitcoin.createNewTransaction(1200, 'SENDER5556S5FDG5GH6JGHJ6UIHJQWED', 'RE-TDSR5WETJYU-5');
+
+console.log(bitcoin);
+
+bitcoin.createNewBlock(33, '56ASD5ASD899SSSSSDDDQW', '98ASDASHGGD44GFD54G45YU4A5S5DH5I');
+
+bitcoin.createNewTransaction(1200, 'SENDER5556S5FDG5GH6JGHJ6UIHJQWED', 'RE-TDSFFFF998R5WETJYU-5');
+bitcoin.createNewTransaction(1200, 'SENDER5556S5FDG5GH6JGHJ6UIHJQWED', 'RE-TDFGHRERWETJYU-5');
+
+bitcoin.createNewBlock(454, 'D665G99TUK9ESAY9', 'TTT4454SD5G555G89H1GJHJKW');
+
 console.log(bitcoin);
