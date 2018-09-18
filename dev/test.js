@@ -1,6 +1,6 @@
 const blockChain = require('./blockchain');
 
-const bitcoin = new  blockChain();
+const bitcoin = new blockChain();
 
 bitcoin.createNewBlock(44425, 'DSDDS877887SDSD87', '90SADASDIIIWEJKA4545A54SD');
 bitcoin.createNewBlock(568955, 'FSDF66S5565565DF', 'SADASDPOPOQPOWEKHKJASDASDJIKJKJASJD');
