@@ -26,4 +26,4 @@ const currentBlockData = [
 
 const nonce = 120;  
 
-console.log(bitc.hashBlock(previousBlockHash, currentBlockData, nonce));
+console.log(bitc.hashBlock(previousBlockHash, currentBlockData, bitc.proofOfWork(previousBlockHash, currentBlockData)));
