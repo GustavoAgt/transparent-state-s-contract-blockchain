@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/blockchain', function (req, res) {
-
+    res.send(bc);
 });
 
 app.post('/transaction', function (req, res) {
