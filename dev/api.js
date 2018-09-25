@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-
 const bodyParser = require('body-parser');
+const Blockchain = require('./blockchain');
+const bc = new Blockchain();
 
 app.use(bodyParser.json());
 
@@ -10,12 +11,14 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/blockchain', function (req, res) {
-    
+
 });
 
 app.post('/transaction', function (req, res) {
-    console.log(req.body);
-    res.send(`The amout of the transaction is ${req.body.amount}`);
+    const blockIndex = bc.createNewTransaction(req.body.amount, req.body.sender, req.body.recipe);
+    res.json({
+        note: `transaction will be added in block ${blockIndex}.`
+    });
 });
 
 app.get('/mine', function (req, res) {
