@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
 const Blockchain = require('./blockchain');
+const uuid = require('uuid/v1');
+
+const nodeAddress = uuid().split('-').join(''); //To generate a random string 
+
 const bc = new Blockchain();
 
 app.use(bodyParser.json());
@@ -22,7 +26,24 @@ app.post('/transaction', function (req, res) {
 });
 
 app.get('/mine', function (req, res) {
+    const lastBlock = bc.getLastBlock();
+    const previousBlockHash = lastBlock['hash'];
+    const currentBlockData = {
+        transactions: bc.pendingTransactions,
+        index: lastBlock['index ']
+    };
+    const nonce = bc.proofOfWork(previousBlockHash, currentBlockData);
+    const blockHash = bc.hashBlock(previousBlockHash, currentBlockData, nonce);
+    
+    bc.createNewTransaction(10.3, "00", nodeAddress);
+    
+    const newBlock = bc.createNewBlock(nonce, previousBlockHash, blockHash);
 
+    res.json({
+        note: "New block mined succesfully",
+        block: newBlock
+
+    }); 
 });
 
 
