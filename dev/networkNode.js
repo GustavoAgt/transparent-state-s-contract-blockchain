@@ -42,7 +42,6 @@ app.get('/mine', function (req, res) {
     res.json({
         note: "New block mined succesfully",
         block: newBlock
-
     }); 
 });
 
